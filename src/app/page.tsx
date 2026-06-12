@@ -6,9 +6,8 @@ export default function HomePage() {
     <div>
       {/* Hero */}
       <section className="bg-jungle-bark text-jungle-sand py-16 px-4 text-center relative overflow-hidden">
-        {/* Subtle wood-grain overlay */}
-        <div className="absolute inset-0 opacity-[0.06]"
-          style={{ backgroundImage: 'repeating-linear-gradient(90deg, transparent, transparent 22px, rgba(255,255,255,0.4) 22px, rgba(255,255,255,0.4) 23px)' }} />
+        {/* Subtle tropical leaf texture overlay */}
+        <div className="absolute inset-0 bg-[url('/texture.svg')] opacity-10" />
 
         <div className="relative max-w-4xl mx-auto">
           {/* Sign Logo — the hero visual */}
