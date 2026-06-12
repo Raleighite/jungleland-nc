@@ -17,7 +17,7 @@ export default function HomePage() {
               src="/logo-badge.png"
               alt="Jungleland — Atlantic Beach, NC"
               width={420}
-              height={389}
+              height={373}
               className="w-64 sm:w-80 md:w-[420px] h-auto"
               style={{ filter: 'drop-shadow(0 20px 48px rgba(0,0,0,0.6))' }}
               priority
