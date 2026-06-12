@@ -1,5 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import MemoryCard from '@/components/MemoryCard'
+import NewsletterSignup from '@/components/NewsletterSignup'
+import { memories } from '@/data/memories'
 
 export default function HomePage() {
   return (
@@ -44,6 +47,26 @@ export default function HomePage() {
               View Gallery
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Stats bar */}
+      {/* PLACEHOLDER — hardcoded counts; derive from real archive data when live */}
+      <section className="bg-jungle-sand/40 border-y border-jungle-sand py-6 px-4">
+        <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-3">
+          {[
+            { count: '21', label: 'memories' },
+            { count: '14', label: 'photos' },
+            { count: '4', label: 'videos' },
+            { count: '3', label: 'stories' },
+            { count: '18', label: 'contributors' },
+          ].map(stat => (
+            <span key={stat.label}
+              className="bg-jungle-cream border border-jungle-amber/40 text-jungle-bark rounded-full px-5 py-2 text-sm font-body shadow-sm">
+              <span className="font-bold text-jungle-amber">{stat.count}</span>{' '}
+              <span className="text-jungle-bark/60">{stat.label}</span>
+            </span>
+          ))}
         </div>
       </section>
 
@@ -104,6 +127,29 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* From the Archive */}
+      <section className="py-16 px-4 bg-jungle-sand/20">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-jungle-teal text-xs font-body font-bold uppercase tracking-[0.2em] mb-3 text-center">Recently Shared</p>
+          <h2 className="font-display text-3xl text-jungle-rust mb-3 text-center">From the Archive</h2>
+          <p className="text-jungle-bark/60 text-center max-w-xl mx-auto mb-10 font-body">
+            A few of the memories the community has shared so far. Every one of them started in someone&apos;s attic, shoebox, or photo album.
+          </p>
+          {/* PLACEHOLDER — pulls from sample data; swap for latest real submissions */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            {memories.slice(0, 3).map(m => (
+              <MemoryCard key={m.name + m.year} {...m} />
+            ))}
+          </div>
+          <div className="text-center">
+            <Link href="/gallery"
+              className="inline-block border border-jungle-amber text-jungle-amber font-body font-bold px-8 py-3 rounded-full hover:bg-jungle-amber hover:text-jungle-bark transition-colors text-sm uppercase tracking-widest">
+              See the Full Gallery →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Banner */}
       <section className="bg-jungle-rust text-jungle-cream py-16 px-4 text-center">
         <h2 className="font-display text-3xl md:text-4xl mb-4">Were you there?</h2>
@@ -115,6 +161,18 @@ export default function HomePage() {
           className="bg-jungle-cream text-jungle-rust font-body font-bold px-10 py-4 rounded-full hover:bg-jungle-sand transition-colors text-sm uppercase tracking-widest inline-block shadow-lg">
           Submit Your Memory →
         </Link>
+      </section>
+
+      {/* Stay in the Loop */}
+      <section className="bg-jungle-bark text-jungle-sand py-16 px-4 text-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/texture.svg')] opacity-10" />
+        <div className="relative max-w-xl mx-auto">
+          <h2 className="font-display text-3xl text-jungle-amber mb-3">Stay in the Loop</h2>
+          <p className="text-jungle-sand/70 mb-8 font-body leading-relaxed">
+            New photos and stories arrive all the time. Leave your email and we&apos;ll let you know when fresh memories join the archive — nothing else, ever.
+          </p>
+          <NewsletterSignup />
+        </div>
       </section>
     </div>
   )
