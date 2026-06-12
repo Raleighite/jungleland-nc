@@ -1,5 +1,5 @@
-// PLACEHOLDER — sample memories to show the vision while real submissions come in.
-// Swap this array for real data (CMS / API) when the archive goes live.
+// PLACEHOLDER — example contributions shown while the archive waits for real submissions.
+// Swap this array for real data (CMS / API) when submissions go live.
 
 export type MemoryCategory = 'Rides' | 'Signage & Entrance' | 'People & Events' | 'Aerial & Maps'
 export type MemoryType = 'photo' | 'video' | 'story'
@@ -12,69 +12,49 @@ export type Memory = {
   story: string
 }
 
+// Each entry is an example of what someone could contribute — not a real submission.
 export const memories: Memory[] = [
   {
-    name: 'Sandra M.',
-    year: '1988',
+    name: 'Your Ferris wheel photo',
+    year: 'any year',
     category: 'Rides',
     type: 'photo',
-    story: 'My dad took this the summer before I started middle school. That was the year I finally rode the big Ferris wheel alone.',
+    story: 'That shot of your family at the top of the wheel, ocean in the background. Even the blurry ones count.',
   },
   {
-    name: 'Anonymous',
-    year: 'early 90s',
+    name: 'Your shot of the entrance',
+    year: 'any year',
     category: 'Signage & Entrance',
     type: 'photo',
-    story: 'The entrance arch. Spent so many summers walking under that sign.',
+    story: 'The arch, the ticket booth, the sign lit up at night — any angle helps us piece the entrance back together.',
   },
   {
-    name: 'Tommy R.',
-    year: '1993',
+    name: 'Your family home video',
+    year: 'any year',
     category: 'People & Events',
     type: 'video',
-    story: 'Home video from our family reunion trip. You can hear my grandma yelling from the bumper boats.',
+    story: 'A few shaky minutes from a camcorder — birthdays, reunions, a cousin on the go-karts. Sound and all.',
   },
   {
-    name: 'Cheryl B.',
-    year: '1979',
+    name: 'Your go-kart story',
+    year: 'any year',
     category: 'Rides',
-    type: 'photo',
-    story: 'First time I ever rode a Ferris wheel. I was terrified. My brother talked me into it.',
+    type: 'story',
+    story: "No photo needed. What you rode, who you raced, what the line felt like on a July afternoon — write it down.",
   },
   {
-    name: 'David K.',
-    year: '2001',
-    category: 'Rides',
-    type: 'photo',
-    story: "One of the last summers it was open. We didn't know it at the time.",
-  },
-  {
-    name: 'Anonymous',
-    year: 'mid-80s',
+    name: 'Your gift-shop postcard',
+    year: 'any year',
     category: 'Aerial & Maps',
     type: 'photo',
-    story: "Postcard from the gift shop. Found it in my grandmother's things.",
+    story: 'Postcards, park maps, brochures — anything that shows the layout. Check the attic and the junk drawer.',
   },
   {
-    name: 'Patricia L.',
-    year: '1996',
+    name: 'Your day-at-the-park memory',
+    year: 'any year',
     category: 'People & Events',
     type: 'story',
-    story: 'Every July 4th weekend. Made it an annual tradition. The go-karts were the best part for the kids.',
-  },
-  {
-    name: 'Mike T.',
-    year: '1985',
-    category: 'Signage & Entrance',
-    type: 'photo',
-    story: 'This photo was in a shoebox for 30 years. Just found it cleaning out the attic.',
-  },
-  {
-    name: 'Rosa N.',
-    year: '1991',
-    category: 'Rides',
-    type: 'video',
-    story: 'My quinceañera celebration included a trip to Jungle Land. This was a big deal for our whole family.',
+    story: 'A tradition, a first date, a graduation trip. The small details are exactly what we want to preserve.',
   },
 ]
 

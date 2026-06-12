@@ -6,6 +6,8 @@ type MemoryCardProps = {
   category: string
   type: 'photo' | 'video' | 'story'
   story: string
+  /** Marks the card as an example of what to contribute, not a real submission */
+  example?: boolean
 }
 
 // PLACEHOLDER — gradient stands in for the real photo/video thumbnail
@@ -22,7 +24,7 @@ const typeIcons: Record<MemoryType, { icon: string; label: string }> = {
   story: { icon: '📖', label: 'Story' },
 }
 
-export default function MemoryCard({ name, year, category, type, story }: MemoryCardProps) {
+export default function MemoryCard({ name, year, category, type, story, example = false }: MemoryCardProps) {
   const gradient = categoryGradients[category as MemoryCategory] ?? categoryGradients['Rides']
   const typeInfo = typeIcons[type]
 
@@ -31,6 +33,11 @@ export default function MemoryCard({ name, year, category, type, story }: Memory
       {/* Placeholder image area */}
       <div className={`relative h-40 bg-gradient-to-br ${gradient}`}>
         <div className="absolute inset-0 bg-[url('/texture.svg')] opacity-10" />
+        {example && (
+          <span className="absolute top-3 left-3 bg-jungle-cream/90 text-jungle-rust text-xs font-bold uppercase tracking-wide px-2.5 py-1 rounded-full">
+            ✨ Example
+          </span>
+        )}
         <span
           className="absolute top-3 right-3 bg-jungle-bark/60 text-jungle-cream text-xs px-2.5 py-1 rounded-full backdrop-blur-sm"
           title={typeInfo.label}
@@ -49,7 +56,9 @@ export default function MemoryCard({ name, year, category, type, story }: Memory
             {category}
           </span>
         </div>
-        <p className="text-jungle-bark/60 text-sm leading-relaxed line-clamp-2">&ldquo;{story}&rdquo;</p>
+        <p className="text-jungle-bark/60 text-sm leading-relaxed line-clamp-2">
+          {example ? story : <>&ldquo;{story}&rdquo;</>}
+        </p>
       </div>
     </article>
   )

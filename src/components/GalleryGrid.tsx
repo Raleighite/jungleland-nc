@@ -16,6 +16,11 @@ export default function GalleryGrid() {
 
   return (
     <div>
+      {/* PLACEHOLDER — example cards; replace with real submissions when live */}
+      <p className="text-center text-jungle-bark/50 italic text-sm mb-8">
+        No submissions are published yet — these cards are examples of what you could contribute.
+      </p>
+
       {/* Filter tabs */}
       <div className="flex flex-wrap justify-center gap-2 mb-10">
         {tabs.map(tab => (
@@ -36,7 +41,7 @@ export default function GalleryGrid() {
       {/* Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {filtered.map(m => (
-          <MemoryCard key={m.name + m.year} {...m} />
+          <MemoryCard key={m.name + m.year} {...m} example />
         ))}
       </div>
     </div>

@@ -50,24 +50,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Stats bar */}
-      {/* PLACEHOLDER — hardcoded counts; derive from real archive data when live */}
+      {/* Archive status bar */}
+      {/* PLACEHOLDER — swap for real archive counts once submissions go live */}
       <section className="bg-jungle-sand/40 border-y border-jungle-sand py-6 px-4">
-        <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-3">
-          {[
-            { count: '21', label: 'memories' },
-            { count: '14', label: 'photos' },
-            { count: '4', label: 'videos' },
-            { count: '3', label: 'stories' },
-            { count: '18', label: 'contributors' },
-          ].map(stat => (
-            <span key={stat.label}
-              className="bg-jungle-cream border border-jungle-amber/40 text-jungle-bark rounded-full px-5 py-2 text-sm font-body shadow-sm">
-              <span className="font-bold text-jungle-amber">{stat.count}</span>{' '}
-              <span className="text-jungle-bark/60">{stat.label}</span>
-            </span>
-          ))}
-        </div>
+        <p className="max-w-4xl mx-auto text-center text-jungle-bark/70 font-body">
+          🌱 The archive is just getting started —{' '}
+          <Link href="/submit" className="text-jungle-amber font-bold hover:underline">
+            be one of the first to contribute
+          </Link>.
+        </p>
       </section>
 
       {/* Why This Exists */}
@@ -130,15 +121,15 @@ export default function HomePage() {
       {/* From the Archive */}
       <section className="py-16 px-4 bg-jungle-sand/20">
         <div className="max-w-5xl mx-auto">
-          <p className="text-jungle-teal text-xs font-body font-bold uppercase tracking-[0.2em] mb-3 text-center">Recently Shared</p>
-          <h2 className="font-display text-3xl text-jungle-rust mb-3 text-center">From the Archive</h2>
+          <p className="text-jungle-teal text-xs font-body font-bold uppercase tracking-[0.2em] mb-3 text-center">The Kind of Thing We&apos;re Looking For</p>
+          <h2 className="font-display text-3xl text-jungle-rust mb-3 text-center">What You Could Contribute</h2>
           <p className="text-jungle-bark/60 text-center max-w-xl mx-auto mb-10 font-body">
-            A few of the memories the community has shared so far. Every one of them started in someone&apos;s attic, shoebox, or photo album.
+            The archive starts in attics, shoeboxes, and photo albums. Here are a few examples of what we&apos;re hoping to collect.
           </p>
-          {/* PLACEHOLDER — pulls from sample data; swap for latest real submissions */}
+          {/* PLACEHOLDER — example cards; swap for latest real submissions when live */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
             {memories.slice(0, 3).map(m => (
-              <MemoryCard key={m.name + m.year} {...m} />
+              <MemoryCard key={m.name + m.year} {...m} example />
             ))}
           </div>
           <div className="text-center">

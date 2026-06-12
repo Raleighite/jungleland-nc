@@ -14,7 +14,7 @@ export default function GalleryPage() {
         <p className="text-jungle-amber text-sm uppercase tracking-widest mb-2">Community Archive</p>
         <h1 className="font-display text-4xl md:text-5xl text-jungle-bark mb-4">Gallery</h1>
         <p className="text-jungle-bark/60 max-w-xl mx-auto">
-          Photos, videos, and memories submitted by people who were there. Every image is a piece of history.
+          This is where community photos, videos, and stories will live. The archive is just getting started — here&apos;s the kind of thing we&apos;re hoping to collect.
         </p>
       </div>
 
