@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 
 const links = [
@@ -13,6 +14,7 @@ const links = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
+  const pathname = usePathname()
   return (
     <nav className="bg-jungle-bark text-jungle-sand shadow-lg border-b border-jungle-amber/20">
       <div className="max-w-6xl mx-auto px-4 py-2 flex items-center justify-between">
@@ -34,7 +36,9 @@ export default function Navbar() {
         <div className="hidden md:flex gap-6 text-sm font-body font-medium">
           {links.slice(1).map(l => (
             <Link key={l.href} href={l.href}
-              className="text-jungle-sand/80 hover:text-jungle-amber transition-colors">
+              className={`transition-colors ${pathname === l.href
+                ? 'text-jungle-amber font-bold'
+                : 'text-jungle-sand/80 hover:text-jungle-amber'}`}>
               {l.label}
             </Link>
           ))}
@@ -55,7 +59,9 @@ export default function Navbar() {
         <div className="md:hidden bg-jungle-bark border-t border-jungle-amber/20 px-4 pb-4 flex flex-col gap-1">
           {links.map(l => (
             <Link key={l.href} href={l.href} onClick={() => setOpen(false)}
-              className="text-jungle-sand/80 hover:text-jungle-amber transition-colors py-2 text-sm font-body border-b border-jungle-sand/10 last:border-0">
+              className={`transition-colors py-2 text-sm font-body border-b border-jungle-sand/10 last:border-0 ${pathname === l.href
+                ? 'text-jungle-amber font-bold'
+                : 'text-jungle-sand/80 hover:text-jungle-amber'}`}>
               {l.label}
             </Link>
           ))}

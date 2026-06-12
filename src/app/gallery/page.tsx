@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function GalleryPage() {
   return (
     <div className="max-w-6xl mx-auto px-4 py-16">
-      <div className="text-center mb-12">
+      <div className="text-center mb-12 animate-fade-in">
         <p className="text-jungle-amber text-sm uppercase tracking-widest mb-2">Community Archive</p>
         <h1 className="font-display text-4xl md:text-5xl text-jungle-bark mb-4">Gallery</h1>
         <p className="text-jungle-bark/60 max-w-xl mx-auto">

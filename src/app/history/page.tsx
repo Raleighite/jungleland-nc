@@ -49,7 +49,7 @@ const attractions = [
 
 export default function HistoryPage() {
   return (
-    <div className="max-w-3xl mx-auto px-4 py-16">
+    <div className="max-w-3xl mx-auto px-4 py-16 animate-fade-in">
       <p className="text-jungle-amber text-sm uppercase tracking-widest mb-2">Atlantic Beach, NC</p>
       <h1 className="font-display text-4xl md:text-5xl text-jungle-bark mb-6">The History of Jungle Land</h1>
       <p className="text-jungle-bark/50 italic mb-10 text-sm">

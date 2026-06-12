@@ -8,7 +8,7 @@ export default function HomePage() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-jungle-bark text-jungle-sand py-16 px-4 text-center relative overflow-hidden">
+      <section className="bg-jungle-bark text-jungle-sand py-16 px-4 text-center relative overflow-hidden animate-fade-in">
         {/* Subtle tropical leaf texture overlay */}
         <div className="absolute inset-0 bg-[url('/texture.svg')] opacity-10" />
 

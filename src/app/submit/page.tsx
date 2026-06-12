@@ -15,7 +15,7 @@ const tips = [
 
 export default function SubmitPage() {
   return (
-    <div className="max-w-5xl mx-auto px-4 py-16">
+    <div className="max-w-5xl mx-auto px-4 py-16 animate-fade-in">
       <p className="text-jungle-amber text-sm uppercase tracking-widest mb-2 text-center">Help Preserve History</p>
       <h1 className="font-display text-4xl md:text-5xl text-jungle-bark mb-4 text-center">Share a Memory</h1>
       <p className="text-jungle-bark/60 text-center mb-12 leading-relaxed max-w-2xl mx-auto">
