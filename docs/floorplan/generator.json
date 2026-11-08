@@ -1,0 +1,13 @@
+{
+  "upstream_commit": "70be3f40f9c2e061290b76027f180d9ff892edd6",
+  "image": "sha256:e7add2a490bb17d97b485b8641bd88455fff7839ade0f5eba493c3508124d413",
+  "runner_files": {
+    "runner.py": "e2073c9dcbed71196d37eab2ae610bd006690d4830427b77729860ed9653e5ec",
+    "REGENERATION.md": "ae3feeefc90487d2b7d48c1bc0eeec0d9c03521225d54c9d8c57b7dafeac938e",
+    "regenerate-media.py": "304199c33661e3e85c828806195f78d7dcbc49d68d43e2c81b5f0069702bc1bd",
+    "toolchain-manifest.json": "1b7391435d8591a5173038dddd39d8858e0d989874f79e1ba1d1fd0e27482ccb",
+    "media-contract.json": "7a92c067fcfa5c04c0bd56f88cec7ab7ea62bfad10faf0f44752dac909f9b513"
+  },
+  "runtime_shipped_here": false,
+  "complete_toolchain_manifest_sha256": "1b7391435d8591a5173038dddd39d8858e0d989874f79e1ba1d1fd0e27482ccb"
+}

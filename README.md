@@ -28,3 +28,7 @@ npm run dev
 ## Deployment
 
 This site is statically exported and can be deployed to any static host (Vercel, Netlify, Cloudflare Pages, etc.).
+
+## Understand this source
+
+Open the [offline Floorplan and guided source tour](docs/floorplan/README.md), or [download the self-contained HTML](docs/floorplan/index.html). This is a pinned source map, not a running application.

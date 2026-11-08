@@ -1,0 +1,176 @@
+{
+  "$schema": "floorplan/architecture@1",
+  "audience": "everyone",
+  "project": {
+    "name": "Jungle Land community archive prototype",
+    "summary": "A statically exported Next.js site with history pages, filterable example memories and client-only contribution forms. No submission backend, newsletter service or virtual recreation is implemented."
+  },
+  "include": [
+    "code",
+    "config"
+  ],
+  "nodes": [
+    {
+      "id": "shell",
+      "label": "Site shell and navigation",
+      "summary": "Shared fonts, page framing and responsive navigation wrap every page.",
+      "paths": [
+        "src/app/layout.tsx",
+        "src/app/globals.css",
+        "src/components/Navbar.tsx",
+        "src/components/Footer.tsx"
+      ],
+      "kind": "ui"
+    },
+    {
+      "id": "pages",
+      "label": "Archive and history pages",
+      "summary": "Home, history, gallery and future-vision pages compose the shared components.",
+      "paths": [
+        "src/app/page.tsx",
+        "src/app/history/page.tsx",
+        "src/app/gallery/page.tsx",
+        "src/app/virtual/page.tsx",
+        "src/components/Timeline.tsx"
+      ],
+      "kind": "ui"
+    },
+    {
+      "id": "gallery",
+      "label": "Example memory browser",
+      "summary": "A local array supplies category counts and cards; filtering is client state.",
+      "paths": [
+        "src/components/GalleryGrid.tsx",
+        "src/components/MemoryCard.tsx",
+        "src/data/memories.ts"
+      ],
+      "kind": "ui"
+    },
+    {
+      "id": "contribute",
+      "label": "Client-only contribution forms",
+      "summary": "Memory and newsletter forms acknowledge locally without sending or saving data.",
+      "paths": [
+        "src/app/submit/page.tsx",
+        "src/components/SubmitForm.tsx",
+        "src/components/NewsletterSignup.tsx"
+      ],
+      "kind": "ui"
+    },
+    {
+      "id": "build",
+      "label": "Static export and style configuration",
+      "summary": "Next exports static pages, Tailwind styles source templates and TypeScript defines compiler and alias settings.",
+      "paths": [
+        "next.config.js",
+        "postcss.config.js",
+        "tailwind.config.ts",
+        "tsconfig.json",
+        "package.json"
+      ],
+      "kind": "config"
+    }
+  ],
+  "edges": [
+    {
+      "from": "build",
+      "to": "shell",
+      "label": "Build static pages and styles",
+      "description": "Next export and font/style configuration supply the rendered site shell.",
+      "kind": "data"
+    },
+    {
+      "from": "shell",
+      "to": "pages",
+      "label": "Navigate between archive pages",
+      "description": "Header and footer links lead to the five declared pages.",
+      "kind": "data"
+    },
+    {
+      "from": "pages",
+      "to": "gallery",
+      "label": "Compose the gallery and examples",
+      "description": "Home and gallery pages use local memory presentation; no remote archive is fetched.",
+      "kind": "data"
+    },
+    {
+      "from": "pages",
+      "to": "contribute",
+      "label": "Invite a contribution",
+      "description": "Calls to action link to the submission page; home includes newsletter signup.",
+      "kind": "data"
+    },
+    {
+      "from": "contribute",
+      "to": "contribute",
+      "label": "Acknowledge only in browser state",
+      "description": "Submission changes React state and renders a summary; newsletter changes its joined flag. Neither writes to an API or database.",
+      "kind": "data"
+    }
+  ],
+  "flows": [
+    {
+      "id": "browse",
+      "title": "Browse example memories",
+      "steps": [
+        {
+          "node": "shell",
+          "note": "Follow the Gallery link."
+        },
+        {
+          "node": "pages",
+          "note": "The gallery page mounts GalleryGrid and explains that the archive cards are examples."
+        },
+        {
+          "node": "gallery",
+          "note": "Select a category; filter the local memories array and display matching MemoryCard components with example badges."
+        }
+      ]
+    },
+    {
+      "id": "submit",
+      "title": "Preview a memory submission",
+      "steps": [
+        {
+          "node": "pages",
+          "note": "Follow a contribution link to the submission page."
+        },
+        {
+          "node": "contribute",
+          "note": "Enter optional details and story, add or remove File objects and give consent. Clicking submit changes client state only; the displayed upload limit is not enforced by addFiles."
+        },
+        {
+          "node": "contribute",
+          "note": "Read the local thank-you summary or reset the form. Nothing is uploaded, persisted or published."
+        }
+      ]
+    }
+  ],
+  "tour": [
+    {
+      "node": "shell",
+      "title": "A static site, not an archive service",
+      "note": "The shared layout loads fonts and navigation; next.config.js requests a static export."
+    },
+    {
+      "node": "gallery",
+      "title": "Examples are deliberately labelled",
+      "note": "The data module contains sample contribution ideas. Filtering does not retrieve real submissions."
+    },
+    {
+      "node": "pages",
+      "title": "History and virtual recreation are provisional",
+      "note": "History content is marked approximate; the virtual page is a future-phase proposal, not an implemented interactive model."
+    },
+    {
+      "node": "contribute",
+      "title": "Thank-you text is not a receipt",
+      "note": "The form and newsletter handlers only change React state. The optimistic UI wording does not prove storage, review or mailing-list enrollment."
+    },
+    {
+      "node": "build",
+      "title": "Build settings are part of the source boundary",
+      "note": "Package and compiler/style configuration are individually described. Original image assets remain in the repository and freshness policy; they are not executable map nodes."
+    }
+  ]
+}
