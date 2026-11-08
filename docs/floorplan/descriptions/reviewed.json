@@ -1,0 +1,106 @@
+{
+  "files": {
+    "next.config.js": {
+      "name": "Next static export settings",
+      "description": "Requests output export and disables image optimization, allowing a static deployment rather than an application server."
+    },
+    "package.json": {
+      "name": "Site package and build commands",
+      "description": "Declares Next, React and development style/TypeScript dependencies and the standard development, build, start and lint commands; none were executed for this map."
+    },
+    "postcss.config.js": {
+      "name": "CSS processing plugins",
+      "description": "Configures Tailwind and Autoprefixer as PostCSS plugins."
+    },
+    "src/app/gallery/page.tsx": {
+      "name": "Gallery page",
+      "description": "Defines gallery metadata, explains that displayed cards are examples, mounts GalleryGrid and links to the contribution page."
+    },
+    "src/app/globals.css": {
+      "name": "Global site styling",
+      "description": "Loads Tailwind layers, applies body and heading typography, and defines the fade-in animation used by page content."
+    },
+    "src/app/history/page.tsx": {
+      "name": "Provisional park history",
+      "description": "Renders historical prose, an approximate hardcoded timeline via Timeline, an attraction list and invitations to supply corrections."
+    },
+    "src/app/layout.tsx": {
+      "name": "Shared root layout",
+      "description": "Loads display/body Google fonts through next/font, defines site metadata and places Navbar and Footer around page content."
+    },
+    "src/app/page.tsx": {
+      "name": "Archive home page",
+      "description": "Introduces the preservation project, links to history, gallery and contributions, presents example memories and includes the client-only newsletter component."
+    },
+    "src/app/submit/page.tsx": {
+      "name": "Contribution page and tips",
+      "description": "Defines submission metadata and places SubmitForm beside static guidance about contextual details and consent."
+    },
+    "src/app/virtual/page.tsx": {
+      "name": "Future virtual recreation proposal",
+      "description": "Displays a staged vision for collecting, mapping, modeling and experiencing the park; implements no interactive recreation."
+    },
+    "src/components/Footer.tsx": {
+      "name": "Shared footer links",
+      "description": "Renders project background, volunteer/disclaimer text and links to the five public pages."
+    },
+    "src/components/GalleryGrid.tsx": {
+      "name": "Client-side example filtering",
+      "description": "Maintains selected category in React state, computes per-category counts from the local array and renders example MemoryCard components."
+    },
+    "src/components/MemoryCard.tsx": {
+      "name": "Memory presentation card",
+      "description": "Displays category gradient, media-type icon, year, label and truncated story; example mode adds a badge instead of rendering a real media thumbnail."
+    },
+    "src/components/Navbar.tsx": {
+      "name": "Responsive navigation",
+      "description": "Uses current pathname to highlight links and local state to open a mobile menu; links close the menu on selection."
+    },
+    "src/components/NewsletterSignup.tsx": {
+      "name": "Newsletter placeholder",
+      "description": "Checks nonblank email text, prevents default submission and toggles a joined message; no mailing-list request or persistence exists."
+    },
+    "src/components/SubmitForm.tsx": {
+      "name": "Memory submission placeholder",
+      "description": "Collects optional details, a capped story, local File objects and consent; supports drag/drop/removal and displays a local summary on submit without uploading or saving."
+    },
+    "src/components/Timeline.tsx": {
+      "name": "Timeline renderer",
+      "description": "Maps supplied year/title/description entries to a styled ordered list; it does not fetch or verify historical claims."
+    },
+    "src/data/memories.ts": {
+      "name": "Example memory types and array",
+      "description": "Defines category and media types and six explicitly illustrative contributions used by the gallery rather than actual user records."
+    },
+    "tailwind.config.ts": {
+      "name": "Tailwind source and theme settings",
+      "description": "Selects app/component source templates and declares the jungle palette, font variables and sign drop shadow."
+    },
+    "tsconfig.json": {
+      "name": "TypeScript compilation settings",
+      "description": "Configures strict no-emit TypeScript checking, bundler module resolution, the Next plugin and the source import alias."
+    }
+  },
+  "routes": {
+    "GET /": {
+      "name": "Visit Archive home page",
+      "description": "Static Next.js filesystem page: Introduces the preservation project, links to history, gallery and contributions, presents example memories and includes the client-only newsletter component. This is a page route, not an API or proof of deployment."
+    },
+    "GET /history": {
+      "name": "Visit Provisional park history page",
+      "description": "Static Next.js filesystem page: Renders historical prose, an approximate hardcoded timeline via Timeline, an attraction list and invitations to supply corrections. This is a page route, not an API or proof of deployment."
+    },
+    "GET /gallery": {
+      "name": "Visit Example memory gallery page",
+      "description": "Static Next.js filesystem page: Defines gallery metadata, explains that displayed cards are examples, mounts GalleryGrid and links to the contribution page. This is a page route, not an API or proof of deployment."
+    },
+    "GET /submit": {
+      "name": "Visit Client-only memory form page",
+      "description": "Static Next.js filesystem page: Defines submission metadata and places SubmitForm beside static guidance about contextual details and consent. This is a page route, not an API or proof of deployment."
+    },
+    "GET /virtual": {
+      "name": "Visit Future recreation proposal page",
+      "description": "Static Next.js filesystem page: Displays a staged vision for collecting, mapping, modeling and experiencing the park; implements no interactive recreation. This is a page route, not an API or proof of deployment."
+    }
+  }
+}
